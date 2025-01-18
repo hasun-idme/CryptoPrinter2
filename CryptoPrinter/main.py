@@ -183,6 +183,42 @@ def get_historical_data():
     return historicals
 
 def get_all_crypto_news():
+    # Replace with your API key
+    API_KEY = os.getenv("CRYPTONEWSAPI_KEY")
+    all_news = {}
+
+    for symbol in symbols:
+        url = f'https://cryptonews-api.com/api/v1?tickers={symbol},&items=3&token={API_KEY}'
+        response = requests.get(url)
+        data = response.json()
+
+        news_data = []
+
+        try:
+            response = requests.get(url)
+            if response.status_code == 200:
+                data = response.json()
+                for article in data["data"]:
+                    news_data.append({
+                    'title': article['title'],
+                    'source': article['news_url'],
+                    })
+                all_news[symbol] = news_data
+                """
+                print(f"Symbol: {symbol}")
+                print(f"Title: {article['title']}")
+                print(f"Source: {article['news_url']}")
+                print(f"Published At: {article['date']}")
+                print("-" * 50)
+                """
+            else:
+                print(f"Error: {response.status_code} - {response.json().get('message', 'Unknown error')}")
+        except Exception as e:
+            print(f"An error occurred: {e}")
+        #print(all_news)
+    return all_news
+
+def get_all_crypto_news_old():
     API_KEY = os.getenv("NEWSAPI_KEY")
     all_news = {}
 
@@ -205,6 +241,13 @@ def get_all_crypto_news():
     return all_news
 
 def get_trade_advice():
+    try:
+        rh.load_session("robinhood.pickle")
+    except:
+        print("Session expired or pickle file corrupted. Reauthenticating...")
+        totp = pyotp.TOTP(os.getenv("TOTP")).now()
+        rh.login(os.getenv("ROBINHOOD_EMAIL"), os.getenv("ROBINHOOD_PASSWORD"), mfa_code=totp)
+        #rh.export_session("robinhood.pickle")
     # Get all the necessary information
     crypto_info = get_crypto_infos()
     balance = get_balance()
@@ -215,6 +258,7 @@ def get_trade_advice():
 
     # Convert the info into a format suitable for the AI prompt
     info_str = f"Crypto Info: {crypto_info}\nBalance: {balance}\nPositions: {positions}\nNews: {news}\nOpen Orders: {open_orders}\nPast Trades: {past_trade_info}"
+    print(info_str)
     prompt = PROMPT_FOR_AI + "\n\n" + info_str
     user_prompt = """
 What should we do to make the most amount of profit based on the info?
@@ -244,6 +288,7 @@ CRITICAL: RESPOND IN ONLY THE ABOVE FORMAT. EXAMPLE: buy_crypto_price("BTC", 30)
 
 def execute_response(response):
     match = re.match(r'(\w+)\((.*?)\)', response)
+    print(f"match value: {match}")
     if match:
         command = match.group(1)
         args = [arg.strip().strip('\"') for arg in match.group(2).split(',')]  # remove surrounding quotation marks
