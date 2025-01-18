@@ -7,6 +7,15 @@ from dotenv import load_dotenv
 import time
 import requests
 import re
+#TODO Add function that imports/stores historic Trades
+#Apply ChatGPT Feedback
+#Add graphs
+#create minimum threshholds for purchases
+#figure out exit criteria for trades
+#find ways to dynamically expand crypto trading options
+#Deploy this is in a cloud environment
+
+load_dotenv()  # Load variables from .env file
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
 totp  = pyotp.TOTP(os.getenv("TOTP")).now()
