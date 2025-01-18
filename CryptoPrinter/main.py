@@ -3,6 +3,7 @@ import pyotp
 import openai
 import os
 from datetime import datetime, timedelta
+from dotenv import load_dotenv
 import time
 import requests
 import re
@@ -102,7 +103,7 @@ def sell_crypto_limit(symbol, amount, limit):
 
 def get_open_orders():
     positions_data = rh.get_all_open_crypto_orders()
-    
+
     useful_infos = []
     for position in positions_data:
         useful_info = {
@@ -167,7 +168,7 @@ def get_historical_data():
                 'volume': entry['volume'],
             }
             useful_data.append(useful_entry)
-        
+
         historicals[symbol] = useful_data
 
     return historicals
@@ -180,7 +181,7 @@ def get_all_crypto_news():
         url = f'https://newsapi.org/v2/everything?q={symbol}&apiKey={API_KEY}'
         response = requests.get(url)
         data = response.json()
-        
+
         news_data = []
         try:
             for article in data['articles'][:3]:  # Limit to top 3 articles
