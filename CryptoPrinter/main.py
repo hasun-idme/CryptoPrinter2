@@ -7,14 +7,10 @@ from dotenv import load_dotenv
 import time
 import requests
 import re
+
 #TODO Add function that imports/stores historic Trades
 #Apply ChatGPT Feedback
-#build better error handling
-#add persistant logging
 #Add graphs
-#create minimum threshholds for purchases
-#figure out exit criteria for trades
-#find ways to dynamically expand crypto trading options
 #Deploy this is in a cloud environment
 
 load_dotenv()  # Load variables from .env file
@@ -22,6 +18,7 @@ load_dotenv()  # Load variables from .env file
 openai.api_key = os.getenv("OPENAI_API_KEY")
 totp  = pyotp.TOTP(os.getenv("TOTP")).now()
 login = rh.login(os.getenv("ROBINHOOD_EMAIL"), os.getenv("ROBINHOOD_PASSWORD"), mfa_code=totp)
+#rh.export_session("robinhood.pickle")
 symbols = ["BTC", "ETH", "BNB", "XRP", "ADA"]
 
 PROMPT_FOR_AI = f"""
@@ -67,30 +64,133 @@ def record_trade(action, symbol, amount, limit=None):
     if len(past_trades) > 10:  # keep only the last 10 trades
         past_trades.pop(0)
 
+def debug_request(func, *args, **kwargs):
+    try:
+        print(f"Requesting: {func.__name__} with args={args}, kwargs={kwargs}")
+        response = func(*args, **kwargs)
+        print(f"Response: {response}")
+        return response
+    except Exception as e:
+        print(f"Error during request: {e}")
+        return None
+
 def get_crypto_infos():
     infos = {}
     for symbol in symbols:
-        quote = rh.get_crypto_quote(symbol)
-        useful_info = {
-            'symbol': quote['symbol'],
-            'ask_price': quote['ask_price'],
-            'bid_price': quote['bid_price'],
-            'high_price': quote['high_price'],
-            'low_price': quote['low_price'],
-            'volume': quote['volume']
-        }
-        infos[symbol] = useful_info
+        try:
+            # Retry the API request with exponential backoff
+            quote = execute_request_with_retries(rh.get_crypto_quote, symbol)
+            if quote:
+                useful_info = {
+                    'symbol': quote['symbol'],
+                    'ask_price': float(quote['ask_price']),
+                    'bid_price': float(quote['bid_price']),
+                    'high_price': float(quote['high_price']),
+                    'low_price': float(quote['low_price']),
+                    'volume': float(quote['volume']),
+                }
+                infos[symbol] = useful_info
+            else:
+                print(f"Failed to fetch data for {symbol} after retries.")
+        except Exception as e:
+            print(f"Error fetching data for {symbol}: {e}")
     return infos
 
 def get_balance():
     profile = rh.profiles.load_account_profile()
     return float(profile["buying_power"])-1  # returns total account equity minus one for fees
 
+def handle_trade_error(symbol, amount, error_msg, action):
+    if "Not enough" in error_msg:
+        max_quantity_match = re.search(r"at most ([0-9.]+)", error_msg)
+        if max_quantity_match:
+            max_quantity = float(max_quantity_match.group(1))
+            print(f"Retrying {action} with max allowed quantity: {max_quantity}")
+            retry_trade(action, symbol, max_quantity)
+    elif "Order too small" in error_msg:
+        min_quantity_match = re.search(r"at least ([0-9.]+)", error_msg)
+        if min_quantity_match:
+            min_quantity = float(min_quantity_match.group(1))
+            print(f"Retrying {action} with min required quantity: {min_quantity}")
+            retry_trade(action, symbol, min_quantity)
+    else:
+        print(f"Unhandled error: {error_msg}")
+
+def retry_trade(action, symbol, amount):
+    """
+    Retry a trade action (buy/sell) with adjusted parameters.
+    """
+    try:
+        if action == "buy":
+            buy_crypto_price(symbol, amount)
+        elif action == "sell":
+            sell_crypto_price(symbol, amount)
+        else:
+            print(f"Invalid action: {action}")
+    except Exception as e:
+        print(f"Error during retry: {e}")
+
+def execute_request_with_retries(request_func, *args, max_retries=3, backoff_factor=2, **kwargs):
+    """
+    Executes an API request with retries in case of failure.
+    """
+    for attempt in range(max_retries):
+        try:
+            response = request_func(*args, **kwargs)
+            if isinstance(response, dict) and "error" in response:
+                print(f"API error: {response['error']}")
+                if response['error'].startswith("422"):
+                    raise ValueError("422 Unprocessable Entity")
+            return response
+        except ValueError as ve:
+            print(f"Error encountered: {ve}. Attempt {attempt + 1} of {max_retries}.")
+            time.sleep(backoff_factor ** attempt)
+        except Exception as e:
+            print(f"Unexpected error: {e}. Attempt {attempt + 1} of {max_retries}.")
+            time.sleep(backoff_factor ** attempt)
+    print("Max retries reached. Request failed.")
+    return None
+
 def buy_crypto_price(symbol, amount):
-    amount = float(amount)
-    res = rh.order_buy_crypto_by_price(symbol, amount)
-    record_trade("buy_crypto_price", symbol, amount)
-    print(res)
+    try:
+        # Validate arguments
+        if not isinstance(symbol, str) or not symbol in symbols:
+            raise ValueError(f"Invalid symbol: {symbol}")
+        if not isinstance(amount, (int, float)) or amount <= 0:
+            raise ValueError(f"Invalid amount: {amount}")
+
+        print("valid input received continuing with buy command")
+        #Convert amount to foat
+        amount = float(amount)
+
+        #response = rh.order_buy_crypto_by_price(symbol, amount)
+        #res = rh.order_buy_crypto_by_price(symbol, amount) updated with error handling
+
+        # Execute the order with retries
+        response = execute_request_with_retries(rh.order_buy_crypto_by_price, symbol, amount)
+
+        # Log response
+        print(f"API Response: {response}")
+
+        if not isinstance(response, dict):
+            raise TypeError(f"Unexpected response type: {type(response)}. Response: {response}")
+
+        # Handle errors in the response
+        if "non_field_errors" in response:
+            error_msg = response["non_field_errors"][0]
+            print(f"Error: {error_msg}")
+            handle_trade_error(symbol, amount, error_msg, "buy")
+            """
+            elif "quantity" in response:
+                error_msg = response["quantity"][0]
+                print(f"Error: {error_msg}")
+                handle_trade_error(symbol, amount, error_msg, "buy")
+            """
+        else:
+            record_trade("buy_crypto_price", symbol, amount)
+            print(f"Buy order successful: {response}")
+    except Exception as e:
+        print(f"error executing buy_crypto_price: {e}")
 
 def buy_crypto_limit(symbol, amount, limit):
     amount = float(amount)
@@ -100,10 +200,37 @@ def buy_crypto_limit(symbol, amount, limit):
     print(res)
 
 def sell_crypto_price(symbol, amount):
-    amount = float(amount)
-    res = rh.order_sell_crypto_by_price(symbol, amount)
-    record_trade("sell_crypto_price", symbol, amount)
-    print(res)
+    try:
+        # Validate arguments
+        if not isinstance(symbol, str) or not symbol in symbols:
+            raise ValueError(f"Invalid symbol: {symbol}")
+        if not isinstance(amount, (int, float)) or amount <= 0:
+            raise ValueError(f"Invalid amount: {amount}")
+
+        #convert amount to float
+        amount = float(amount)
+
+        res = rh.order_sell_crypto_by_price(symbol, amount) #updated with error handling
+        #response = execute_request_with_retries(rh.order_sell_crypto_by_price, symbol, amount)
+
+        # Log response
+        print(f"API Response: {response}")
+
+        if "non_field_errors" in response:
+            error_msg = response["non_field_errors"][0]
+            print(f"Error: {error_msg}")
+            handle_trade_error(symbol, amount, error_msg, "sell")
+            """
+            elif "quantity" in response:
+                error_msg = response["quantity"][0]
+                print(f"Error: {error_msg}")
+                handle_trade_error(symbol, amount, error_msg, "sell")
+            """
+        else:
+            record_trade("sell_crypto_price", symbol, amount)
+            print(f"Sell order successful: {response}")
+    except Exception as e:
+        print(f"Error executing sell_crypto_price: {e}")
 
 def sell_crypto_limit(symbol, amount, limit):
     amount = float(amount)
@@ -248,7 +375,9 @@ def get_trade_advice():
     except:
         print("Session expired or pickle file corrupted. Reauthenticating...")
         totp = pyotp.TOTP(os.getenv("TOTP")).now()
-        rh.login(os.getenv("ROBINHOOD_EMAIL"), os.getenv("ROBINHOOD_PASSWORD"), mfa_code=totp)
+        login = rh.login("hasunkhan123@gmail.com", "thaiTea123", mfa_code=totp)
+        #rh.login(os.getenv("ROBINHOOD_EMAIL"), os.getenv("ROBINHOOD_PASSWORD"), mfa_code=totp)
+
         #rh.export_session("robinhood.pickle")
     # Get all the necessary information
     crypto_info = get_crypto_infos()
@@ -285,18 +414,63 @@ CRITICAL: RESPOND IN ONLY THE ABOVE FORMAT. EXAMPLE: buy_crypto_price("BTC", 30)
         temperature = 0.2,
     )
     res = response.choices[0].message["content"]
+    print(f"AI Response: {res}")
     res = res.replace("\\", "")
     return res
 
+def execute_request_with_retries(request_func, *args, max_retries=3, backoff_factor=2, **kwargs):
+    """
+    Executes an API request with retries in case of failure.
+    """
+    for attempt in range(max_retries):
+        try:
+            response = request_func(*args, **kwargs)
+            if isinstance(response, dict) and "error" in response:
+                print(f"API error: {response['error']}")
+                if response['error'].startswith("422"):
+                    raise ValueError("422 Unprocessable Entity")
+            return response
+        except requests.exceptions.RequestException as e:
+            # Log the error
+            print(f"Request failed: {e}. Attempt {attempt + 1} of {max_retries}.")
+            # Check if it is a retryable error (502)
+            if hasattr(e, 'response') and e.response.status_code == 502:
+                time.sleep(backoff_factor ** attempt)  # Exponential backoff
+            else:
+                raise  # Re-raise non-retryable errors
+        except ValueError as ve:
+            print(f"Error encountered: {ve}. Attempt {attempt + 1} of {max_retries}.")
+            time.sleep(backoff_factor ** attempt)
+        except Exception as e:
+            print(f"Unexpected error: {e}. Attempt {attempt + 1} of {max_retries}.")
+            time.sleep(backoff_factor ** attempt)
+    print("Max retries reached. Request failed.")
+    return None
+
 def execute_response(response):
+    print(f"response from get_crypto_advice: {response}")
     match = re.match(r'(\w+)\((.*?)\)', response)
     print(f"match value: {match}")
     if match:
         command = match.group(1)
-        args = [arg.strip().strip('\"') for arg in match.group(2).split(',')]  # remove surrounding quotation marks
+        args = [arg.strip().strip('"') for arg in match.group(2).split(',')]
+        #args = [arg.strip().strip('\"') for arg in match.group(2).split(',')]  # remove surrounding quotation marks
         if len(args) == 1:
             print("Doing nothing...")
             return
+
+        #validating and converting arguments
+        if command in ["buy_crypto_price", "sell_crypto_price"]:
+            if len(args) != 2:
+                print(f"Invalid arguments for {command}: {args}")
+                return
+            try:
+                args[1] = float(args[1])  # Convert amount to float
+            except ValueError:
+                print(f"Invalid amount format for {command}: {args[1]}")
+                return
+        print("validated command arguments continuing to execute command")
+
         command_map = {
             "buy_crypto_price": buy_crypto_price,
             "buy_crypto_limit": buy_crypto_limit,
@@ -307,9 +481,13 @@ def execute_response(response):
         }
         function_to_execute = command_map.get(command)  # retrieves the function from command_map dictionary
         if function_to_execute:
+            print(f"Parsed arguments for {command}: {args}")
             print(f"Executing command {function_to_execute} with args {args} in 5 seconds.")
             time.sleep(5)
-            function_to_execute(*args)  # executes the function with its arguments
+            try:
+                function_to_execute(*args)  # executes the function with its arguments
+            except Exception as ee:
+                print(f"Error executing {command}: {e}")
         else:
             print("Invalid command:", command)
     else:
