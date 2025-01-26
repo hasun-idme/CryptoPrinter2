@@ -7,15 +7,6 @@ from dotenv import load_dotenv
 import time
 import requests
 import re
-#TODO Add function that imports/stores historic Trades
-#Apply ChatGPT Feedback
-#build better error handling
-#add persistant logging
-#Add graphs
-#create minimum threshholds for purchases
-#figure out exit criteria for trades
-#find ways to dynamically expand crypto trading options
-#Deploy this is in a cloud environment
 
 load_dotenv()  # Load variables from .env file
 
@@ -153,7 +144,8 @@ def get_positions():
 def cancel_order(orderId):
     rh.cancel_crypto_order(orderId)
 
-def get_historical_data():
+def get_historical_data(): #REFACTOR
+
     # Define the start and end times
     end_time = datetime.now()
     start_time = end_time - timedelta(days=7)
@@ -220,29 +212,7 @@ def get_all_crypto_news():
         #print(all_news)
     return all_news
 
-def get_all_crypto_news_old():
-    API_KEY = os.getenv("NEWSAPI_KEY")
-    all_news = {}
-
-    for symbol in symbols:
-        url = f'https://newsapi.org/v2/everything?q={symbol}&apiKey={API_KEY}'
-        response = requests.get(url)
-        data = response.json()
-
-        news_data = []
-        try:
-            for article in data['articles'][:3]:  # Limit to top 3 articles
-                news_data.append({
-                    'title': article['title'],
-                    'source': article['source']['name'],
-                })
-            all_news[symbol] = news_data
-        except:
-            return all_news
-
-    return all_news
-
-def get_trade_advice():
+def get_trade_advice(): #REFACTOR
     try:
         rh.load_session("robinhood.pickle")
     except:

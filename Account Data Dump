@@ -1,0 +1,1085 @@
+{
+  "accounts": [
+    {
+      "uuid": "c5735b2f-fea2-517e-bff6-24a3f2dded61",
+      "name": "HBAR Wallet",
+      "currency": "HBAR",
+      "available_balance": {
+        "value": "379.5768236",
+        "currency": "HBAR"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2025-01-14T08:24:23.119Z",
+      "updated_at": "2025-01-14T08:24:23.119Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "HBAR"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "c3d18882-b6f0-58bc-b522-34ae98f8f542",
+      "name": "DEGEN Wallet",
+      "currency": "DEGEN",
+      "available_balance": {
+        "value": "0",
+        "currency": "DEGEN"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2024-11-12T06:59:36.559Z",
+      "updated_at": "2025-01-14T08:24:29.095Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "DEGEN"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "e28a995c-7a54-5cf5-b401-4e54f56f06a3",
+      "name": "DOGE Wallet",
+      "currency": "DOGE",
+      "available_balance": {
+        "value": "0.39418747",
+        "currency": "DOGE"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2024-05-16T06:52:20.034Z",
+      "updated_at": "2024-09-03T18:37:17.199Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "DOGE"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "d25f74b6-6983-5886-a04d-e27fd374127a",
+      "name": "ETH2 Wallet",
+      "currency": "ETH2",
+      "available_balance": {
+        "value": "0",
+        "currency": "ETH2"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2023-07-19T14:19:03.693Z",
+      "updated_at": "2023-07-19T14:19:03.693Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": false,
+      "hold": {
+        "value": "0",
+        "currency": "ETH2"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "f9ee59b8-7491-5506-a225-78df674cd32c",
+      "name": "UPI Wallet",
+      "currency": "UPI",
+      "available_balance": {
+        "value": "6918.3520527",
+        "currency": "UPI"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2022-11-01T18:50:42.586Z",
+      "updated_at": "2022-11-01T18:50:55.472Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "UPI"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "edf3f09c-8221-5cea-9f60-4a92c3dc4f19",
+      "name": "DREP Wallet",
+      "currency": "DREP",
+      "available_balance": {
+        "value": "0",
+        "currency": "DREP"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2022-10-25T08:35:05.067Z",
+      "updated_at": "2023-09-22T18:21:08.039Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "DREP"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "5dbf8aeb-9b0e-5e04-9ba7-26ab016276aa",
+      "name": "GAL Wallet",
+      "currency": "GAL",
+      "available_balance": {
+        "value": "0",
+        "currency": "GAL"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2022-07-24T08:34:25.670Z",
+      "updated_at": "2022-10-25T08:35:16.032Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "GAL"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "f73e1c81-639a-5e6a-bf75-7cb8ce6f8af7",
+      "name": "GST Wallet",
+      "currency": "GST",
+      "available_balance": {
+        "value": "0",
+        "currency": "GST"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2022-07-24T08:33:36.182Z",
+      "updated_at": "2025-01-14T08:25:01.178Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "GST"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "7b2c3b59-7876-54c4-9d23-7bf4780cc046",
+      "name": "DEXT Wallet",
+      "currency": "DEXT",
+      "available_balance": {
+        "value": "0",
+        "currency": "DEXT"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2022-07-23T07:03:31.374Z",
+      "updated_at": "2022-07-24T08:35:57.182Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "DEXT"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "023e21aa-a770-5e30-b2bf-9d3c307eaa7f",
+      "name": "JUP Wallet",
+      "currency": "JUP",
+      "available_balance": {
+        "value": "0",
+        "currency": "JUP"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2022-07-06T15:49:01.939Z",
+      "updated_at": "2022-07-31T15:28:27.192Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": false,
+      "hold": {
+        "value": "0",
+        "currency": "JUP"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "99c9e4be-ef8e-5979-a515-3e8568c07fe6",
+      "name": "FORT Wallet",
+      "currency": "FORT",
+      "available_balance": {
+        "value": "0",
+        "currency": "FORT"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2022-06-16T01:55:03.345Z",
+      "updated_at": "2022-07-06T15:49:54.713Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "FORT"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "84d29056-ce8b-5dd5-8df3-024f85b4ddea",
+      "name": "APE Wallet",
+      "currency": "APE",
+      "available_balance": {
+        "value": "0",
+        "currency": "APE"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2022-03-18T17:28:50.311Z",
+      "updated_at": "2023-09-22T18:20:42.157Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "APE"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "983f3fdc-c6da-55d1-9dc2-c33ac9dd31db",
+      "name": "BOND Wallet",
+      "currency": "BOND",
+      "available_balance": {
+        "value": "0",
+        "currency": "BOND"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2022-02-06T19:23:16.329Z",
+      "updated_at": "2022-07-23T04:44:53.579Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "BOND"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "863d46a8-ebc2-512a-943c-45aa56ed4cc0",
+      "name": "FIL Wallet",
+      "currency": "FIL",
+      "available_balance": {
+        "value": "0",
+        "currency": "FIL"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2022-02-06T19:23:16.467Z",
+      "updated_at": "2022-11-01T18:50:49.107Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "FIL"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "fa3c59a6-61ed-5af3-8ba4-321df38c759f",
+      "name": "ENS Wallet",
+      "currency": "ENS",
+      "available_balance": {
+        "value": "0",
+        "currency": "ENS"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2022-02-06T19:23:16.236Z",
+      "updated_at": "2023-09-22T18:20:57.588Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "ENS"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "57a7a28e-5ef5-59ba-9879-f742a7782e73",
+      "name": "ADA Wallet",
+      "currency": "ADA",
+      "available_balance": {
+        "value": "0",
+        "currency": "ADA"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2022-02-06T19:23:16.285Z",
+      "updated_at": "2022-02-06T19:23:16.285Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "ADA"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "b0bb51b1-6f95-54f9-8e16-38721dc860fe",
+      "name": "SOL Wallet",
+      "currency": "SOL",
+      "available_balance": {
+        "value": "0",
+        "currency": "SOL"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2022-02-06T19:23:16.135Z",
+      "updated_at": "2022-02-06T19:23:16.135Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "SOL"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "c99cd41b-bba4-560e-b964-8fd7bc6c15f3",
+      "name": "AXS Wallet",
+      "currency": "AXS",
+      "available_balance": {
+        "value": "0",
+        "currency": "AXS"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2022-02-06T19:22:32.024Z",
+      "updated_at": "2022-03-18T17:29:49.397Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "AXS"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "5abcbe1a-acfa-546a-97f7-f50efc135215",
+      "name": "COVAL Wallet",
+      "currency": "COVAL",
+      "available_balance": {
+        "value": "0",
+        "currency": "COVAL"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2021-12-21T15:33:34.521Z",
+      "updated_at": "2022-02-06T19:24:06.288Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "COVAL"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "9b1fa663-6869-50b3-906d-9e5819ce5486",
+      "name": "AMP Wallet",
+      "currency": "AMP",
+      "available_balance": {
+        "value": "0",
+        "currency": "AMP"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2021-11-23T20:05:25.358Z",
+      "updated_at": "2021-11-23T20:05:25.358Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "AMP"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "fa774a32-663a-5759-9021-2d09f4b825d5",
+      "name": "AVAX Wallet",
+      "currency": "AVAX",
+      "available_balance": {
+        "value": "0",
+        "currency": "AVAX"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2021-11-08T06:46:48.982Z",
+      "updated_at": "2022-04-26T14:12:58.704Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "AVAX"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "7e2a4002-066a-578c-97a3-16e3b0a9a069",
+      "name": "IOTX Wallet",
+      "currency": "IOTX",
+      "available_balance": {
+        "value": "0",
+        "currency": "IOTX"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2021-11-04T15:17:36.667Z",
+      "updated_at": "2021-11-04T17:01:49.683Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "IOTX"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "0913a5b2-d439-54fd-a879-5146478eff6c",
+      "name": "LRC Wallet",
+      "currency": "LRC",
+      "available_balance": {
+        "value": "0.0000000006147685",
+        "currency": "LRC"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2021-11-03T06:48:32.093Z",
+      "updated_at": "2021-12-21T15:34:42.493Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "LRC"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "c8339f6e-d326-55e9-9981-ebe799346d2c",
+      "name": "TRAC Wallet",
+      "currency": "TRAC",
+      "available_balance": {
+        "value": "0",
+        "currency": "TRAC"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2021-11-03T00:19:31.142Z",
+      "updated_at": "2021-11-10T11:32:11.404Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "TRAC"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "6cb3fd56-755a-549c-a344-c21575adce51",
+      "name": "DOT Wallet",
+      "currency": "DOT",
+      "available_balance": {
+        "value": "0",
+        "currency": "DOT"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2021-11-01T15:51:55.815Z",
+      "updated_at": "2021-11-03T04:26:19.404Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "DOT"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "1f18c9ed-94a6-5edb-9648-7d0562129e64",
+      "name": "SHIB Wallet",
+      "currency": "SHIB",
+      "available_balance": {
+        "value": "0",
+        "currency": "SHIB"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2021-10-28T15:39:20.769Z",
+      "updated_at": "2021-10-29T02:37:00.925Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "SHIB"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "6611e1ef-a630-5107-a2d4-d90bf70137fa",
+      "name": "ACH Wallet",
+      "currency": "ACH",
+      "available_balance": {
+        "value": "0",
+        "currency": "ACH"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2021-08-07T02:07:37.557Z",
+      "updated_at": "2021-08-07T02:07:37.557Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "ACH"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "014babe0-febd-5824-82ca-e8eaa92a8c10",
+      "name": "UMA Wallet",
+      "currency": "UMA",
+      "available_balance": {
+        "value": "0",
+        "currency": "UMA"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2021-04-25T15:57:58.508Z",
+      "updated_at": "2021-05-10T22:49:51.108Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "UMA"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "4e5bc3fc-6dc1-52ea-b01d-61ce64c2a60c",
+      "name": "MKR Wallet",
+      "currency": "MKR",
+      "available_balance": {
+        "value": "0",
+        "currency": "MKR"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2021-04-22T06:06:40.358Z",
+      "updated_at": "2021-04-23T04:06:01.635Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "MKR"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "925054b0-0de4-55a4-8e30-9c0422720e6b",
+      "name": "XLM Wallet",
+      "currency": "XLM",
+      "available_balance": {
+        "value": "0",
+        "currency": "XLM"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2021-04-13T13:52:13.654Z",
+      "updated_at": "2021-07-03T23:00:18.249Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "XLM"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "cd6be688-d768-5dd4-81d9-d3581b45efec",
+      "name": "GRT Wallet",
+      "currency": "GRT",
+      "available_balance": {
+        "value": "0",
+        "currency": "GRT"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2021-03-26T15:36:46.296Z",
+      "updated_at": "2021-03-26T15:36:46.296Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "GRT"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "070fdb82-44fa-54bb-ac47-a967e72b0447",
+      "name": "XTZ Wallet",
+      "currency": "XTZ",
+      "available_balance": {
+        "value": "0.086109",
+        "currency": "XTZ"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2021-03-26T15:21:28.692Z",
+      "updated_at": "2024-11-06T11:39:33.226Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "XTZ"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "c14d1679-3167-5d23-935a-c9dbe20ca0b1",
+      "name": "REN Wallet",
+      "currency": "REN",
+      "available_balance": {
+        "value": "0",
+        "currency": "REN"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2020-12-23T01:33:31.758Z",
+      "updated_at": "2020-12-23T17:35:11.866Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "REN"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "7b0a6b05-a80c-5803-9773-94045c636564",
+      "name": "NU Wallet",
+      "currency": "NU",
+      "available_balance": {
+        "value": "0",
+        "currency": "NU"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2020-12-21T21:26:35.198Z",
+      "updated_at": "2020-12-21T22:20:22.575Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "NU"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "cd89733e-c8e3-5ddc-b14b-626352a16dbe",
+      "name": "OXT Wallet",
+      "currency": "OXT",
+      "available_balance": {
+        "value": "0",
+        "currency": "OXT"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2020-12-21T05:35:32.956Z",
+      "updated_at": "2021-04-18T05:05:06.706Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "OXT"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "4a7325ac-8018-51db-adb4-2ad9330b8ad0",
+      "name": "ALGO Wallet",
+      "currency": "ALGO",
+      "available_balance": {
+        "value": "0",
+        "currency": "ALGO"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2020-12-18T18:09:30.284Z",
+      "updated_at": "2020-12-18T18:09:30.284Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "ALGO"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "e434c4b0-61ac-5e94-bd38-21aa1df059ab",
+      "name": "XRP Wallet",
+      "currency": "XRP",
+      "available_balance": {
+        "value": "0",
+        "currency": "XRP"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2020-12-04T03:31:59.557Z",
+      "updated_at": "2020-12-21T05:36:16.572Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "XRP"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "5fb8fa4b-6680-5bdd-aca5-c242e648d21b",
+      "name": "ATOM Wallet",
+      "currency": "ATOM",
+      "available_balance": {
+        "value": "0",
+        "currency": "ATOM"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2020-11-20T17:56:19.320Z",
+      "updated_at": "2020-11-20T17:56:19.320Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "ATOM"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "cd76635f-7078-51a5-ab0c-62936118b278",
+      "name": "OMG Wallet",
+      "currency": "OMG",
+      "available_balance": {
+        "value": "0.02221434",
+        "currency": "OMG"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2020-05-22T18:53:08.093Z",
+      "updated_at": "2020-05-22T18:53:08.947Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "OMG"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "9c86c523-3382-5052-b905-0170974aa8d3",
+      "name": "BSV Wallet",
+      "currency": "BSV",
+      "available_balance": {
+        "value": "0",
+        "currency": "BSV"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2019-02-08T02:10:00.109Z",
+      "updated_at": "2024-02-28T15:48:59.011Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": false,
+      "hold": {
+        "value": "0",
+        "currency": "BSV"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "f1a61ede-601a-531e-9670-8d1c1b9136d2",
+      "name": "CVC Wallet",
+      "currency": "CVC",
+      "available_balance": {
+        "value": "0",
+        "currency": "CVC"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2018-12-11T03:28:45.499Z",
+      "updated_at": "2021-04-18T05:04:27.901Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "CVC"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "028005a7-bb06-5ecd-bdb6-0adcca3038ad",
+      "name": "DNT Wallet",
+      "currency": "DNT",
+      "available_balance": {
+        "value": "0",
+        "currency": "DNT"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2018-12-11T03:28:45.437Z",
+      "updated_at": "2020-12-23T22:26:11.360Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "DNT"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "02296d32-feab-5659-86c8-c666cbc7d2e3",
+      "name": "MANA Wallet",
+      "currency": "MANA",
+      "available_balance": {
+        "value": "0",
+        "currency": "MANA"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2018-12-11T03:28:45.373Z",
+      "updated_at": "2021-10-31T18:20:31.384Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "MANA"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "a2743bed-6ce2-5e08-9c0d-be2ec002e9dc",
+      "name": "LOOM Wallet",
+      "currency": "LOOM",
+      "available_balance": {
+        "value": "0",
+        "currency": "LOOM"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2018-12-11T03:28:45.190Z",
+      "updated_at": "2018-12-11T03:28:45.190Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "LOOM"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "79b26fb3-4272-5c18-84fb-7469eb44bb38",
+      "name": "ZEC Wallet",
+      "currency": "ZEC",
+      "available_balance": {
+        "value": "0",
+        "currency": "ZEC"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2018-11-30T06:57:10.235Z",
+      "updated_at": "2018-11-30T06:57:11.679Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "ZEC"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "1fe2c0bd-aa22-5cbc-bdee-b5ce9738a0ea",
+      "name": "BAT Wallet",
+      "currency": "BAT",
+      "available_balance": {
+        "value": "0",
+        "currency": "BAT"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2018-11-06T21:49:59.399Z",
+      "updated_at": "2018-11-06T21:49:59.399Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "BAT"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "4db6445a-edfd-5b08-a555-eeb266cfee52",
+      "name": "USDC Wallet",
+      "currency": "USDC",
+      "available_balance": {
+        "value": "0.585879",
+        "currency": "USDC"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2018-10-23T23:23:48.739Z",
+      "updated_at": "2024-05-16T06:52:25.892Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "USDC"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "409194e4-bf5e-5579-9246-4164c1675009",
+      "name": "PBVAONFR Wallet",
+      "currency": "PBVAONFR",
+      "available_balance": {
+        "value": "0",
+        "currency": "PBVAONFR"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2018-10-20T22:57:11.470Z",
+      "updated_at": "2018-10-20T22:57:11.470Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": false,
+      "hold": {
+        "value": "0",
+        "currency": "PBVAONFR"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    },
+    {
+      "uuid": "0b26b9e6-fab6-59bf-9fa6-7c0c0540594a",
+      "name": "ZRX Wallet",
+      "currency": "ZRX",
+      "available_balance": {
+        "value": "0",
+        "currency": "ZRX"
+      },
+      "default": true,
+      "active": true,
+      "created_at": "2018-10-06T03:54:06.174Z",
+      "updated_at": "2022-06-15T22:02:19.407Z",
+      "deleted_at": null,
+      "type": "ACCOUNT_TYPE_CRYPTO",
+      "ready": true,
+      "hold": {
+        "value": "0",
+        "currency": "ZRX"
+      },
+      "retail_portfolio_id": "a7dd7b44-3cb8-539c-b284-95fcc7c33ef5",
+      "platform": "ACCOUNT_PLATFORM_CONSUMER"
+    }
+  ],
+  "has_next": true,
+  "cursor": "d3ff5e95-f6ec-5ca3-8c0f-4d425ef2142d",
+  "size": 49
+}
